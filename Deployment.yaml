@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: flipcart
+  name: flipcart
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: flipcart
+  template:
+    metadata:
+      labels:
+        app: flipcart
+    spec:
+      containers:
+      - image: katarnak/pranathe-kleshanashaya:ubuntu
+        imagePullPolicy: Always
+        name: flipcart
